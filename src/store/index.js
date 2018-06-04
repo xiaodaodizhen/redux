@@ -1,12 +1,9 @@
 // 创建store
 import { createStore } from "../redux";
-// import readuxer from "./reducers/counter";
-// // 创建容器
-// let store = new createStore(readuxer);
-// export default store;
+import newReducer from "./reducers/hebingzujian";
 
-
-import todo from "./reducers/todo";
-let store = new createStore(todo);
+// 创建容器
+// let store = new createStore(todo);---------未经合并的组件
+let store = new createStore(newReducer);// ------------多组件合并使用
 window.store = store;
 export default store;

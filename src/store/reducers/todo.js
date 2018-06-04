@@ -8,7 +8,7 @@ let initState = {
 function reduxer(state = initState, action) {
   switch (action.type) {
     case types.TODO_ADD:
-      return { todos: [...initState, action.todo] };
+      return { todos: [...state.todos, action.todo] };
   }
   return state;
 }

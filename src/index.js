@@ -5,5 +5,4 @@ import Todo from "./component/todo";
 
 
 
-render(<Todo />, window.root);
-// render(<Counter />, window.root);
+render(<div><Todo /><Counter /></div>, window.root);

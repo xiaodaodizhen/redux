@@ -17,7 +17,7 @@ export default class Counter extends Component {
   componentDidMount() {
     // 组件挂载完成后，希望订阅一个更新状态的方法，只要状态发生变化，就setState(重新设置状态)更新视图
     this.unAdd = store.subScribe(() => {
-      this.setState({ number: store.getState().number });//异步或者有延迟，不会设置值了，立刻改变state,中间获取执行了什么
+      this.setState({ number: store.getState().c.number });//异步或者有延迟，不会设置值了，立刻改变state,中间获取执行了什么
       // setTimeout(()=> {
       //   console.log(this.state.number);
       // }, 1000);
