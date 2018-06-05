@@ -14,3 +14,18 @@
 
 ## component文件
 - counter1.js 是未将各个功能拆分成多个文件目录的组件
+
+
+## npm install react-redux
+
+
+- import { Provider } from "react-redux"
+- Provider 可以实现将state 映射到组件中（省略了以往在  
+        constructor() {
+            super();
+            this.state = { todos: store.getState().t.todos };// 省略了这一步状态
+        }
+  ），实现自动更新（不在需要订阅状态实现更新页面）
+- 组件中
+import { connect } from 'react-redux';//connect方法是实现redux和组件的链接
+
