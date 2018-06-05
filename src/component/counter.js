@@ -10,9 +10,15 @@ class Counter extends Component {
   render() {
     return (
       <div>技术群
-          {/* {this.state.number} */}
-        <button onClick={this.props.handleAdd(2)}>+</button>
-        <button onClick={this.props.handleDelete(1)}>-</button>
+          {this.props.n}
+
+        <button onClick={() => {
+          this.props.handleAdd(2)
+        }}>+</button>
+
+        <button onClick={() => {
+          this.props.handleDelete(1)
+        }}>-</button>
       </div>
     )
   }
@@ -22,14 +28,10 @@ class Counter extends Component {
 let mapStateToProps = (state) => {
   return { n: state.c.number };// 以前的store.getState().c.number
 }
-let mapDispatchToProps=(dispatch)=>{// 以前的store.dispatch
+let mapDispatchToProps = (dispatch) => {// 以前的store.dispatch
   return {
-    handleAdd(n){
-      dispatch(actions.add(n));
-    },
-    handleDelete(n){
-      dispatch(actions.delete(n));
-    }
+    handleAdd(n) { dispatch(actions.add(n)) },
+    handleDelete(n) { dispatch(actions.delete(n)) }
   }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Counter);
